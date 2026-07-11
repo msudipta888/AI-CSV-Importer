@@ -18,14 +18,7 @@ Below is a preview of the stateless lead schema engine in action, showing the re
 
 ![GrowEasy AI CSV Importer - Batch Processing](screenshot.png)
 
----
 
-## 🔗 Live Application Links
-
-- **Production Frontend**: [https://ai-csv-importer-rust.vercel.app/](https://ai-csv-importer-rust.vercel.app/)
-- **Production Backend API**: [https://ai-csv-importer-y2d8.onrender.com](https://ai-csv-importer-y2d8.onrender.com)
-
----
 
 ## 🏗️ Technical Architecture & Design Decisions
 
