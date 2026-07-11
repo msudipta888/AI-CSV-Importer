@@ -90,11 +90,11 @@ export default function CsvUploader({ onFileLoaded, onError }) {
           type="file"
           id="csv-file-input"
           accept=".csv"
-          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
           onChange={handleFileInput}
         />
 
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="relative z-10 flex flex-col items-center pointer-events-none">
           {/* Cloud Upload Icon */}
           <div className="w-16 h-16 mb-4 rounded-2xl bg-slate-800/80 border border-slate-700/50 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:border-cyan-400/40 group-hover:shadow-cyan-950/30 transition-all duration-300">
             <svg
