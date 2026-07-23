@@ -7,7 +7,7 @@ WORKDIR /app
 # 3. Copy package manifests first to leverage Docker layer caching
 COPY package*.json ./
 
-COPY .env ./env
+COPY .env* ./
 # 4. Install production dependencies
 RUN npm ci --only=production
 
