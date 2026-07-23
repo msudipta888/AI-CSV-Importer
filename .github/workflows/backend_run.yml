@@ -2,8 +2,7 @@ name: csv backend ci
 
 on:
     push:
-    workflow-dispatch:
-
+        
 jobs:
     build:
         runs-on: ubuntu-latest
