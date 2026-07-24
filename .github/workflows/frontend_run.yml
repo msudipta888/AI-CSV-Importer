@@ -36,8 +36,10 @@ jobs:
         steps:
             - name: checkout code
               uses: actions/checkout@v7
-            - uses: BetaHuhn/deploy-to-vercel-action@latest
+            - uses: BetaHuhn/deploy-to-vercel-action@v1
               with:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+                  WORKING_DIRECTORY: ./frontend
