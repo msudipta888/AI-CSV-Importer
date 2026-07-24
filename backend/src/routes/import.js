@@ -21,7 +21,7 @@ router.post('/import', async (req, res) => {
     }
 
     const normalizedRows = normalizeRows(rows);
-    const BATCH_SIZE = 15;
+    const BATCH_SIZE = 20;
     const finalImported = [];
     const finalSkipped = [];
 

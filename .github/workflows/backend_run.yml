@@ -2,7 +2,10 @@ name: csv backend ci
 
 on:
     push:
-        
+      branches: [ "main" ]
+      paths:
+        - 'backend/**'
+        - '.github/workflows/backend_run.yml'  
 jobs:
     build:
         runs-on: ubuntu-latest
