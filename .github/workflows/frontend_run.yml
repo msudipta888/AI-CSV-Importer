@@ -37,9 +37,8 @@ jobs:
             - name: checkout code
               uses: actions/checkout@v4
             - name: Deploy to Vercel
-              working-directory: ./frontend
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-              run: npx vercel@latest --prod --token=${{ secrets.VERCEL_TOKEN }}
+              run: npx vercel@latest ./frontend --prod --token=${{ secrets.VERCEL_TOKEN }}
