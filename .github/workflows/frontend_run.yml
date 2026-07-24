@@ -1,0 +1,43 @@
+name: Frontend CI/CD
+
+on:
+    push:
+        branches: ["main"]
+        paths:
+            - 'frontend/**'
+            - '.github/workflows/frontend_run.yml'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+           - name: checkout the code
+             uses: actions/checkout@v7
+           - name: Set up Nodejs
+             uses: actions/setup-node@v6
+             with:
+                node-version: '24'
+           - name: Install Dependency
+             working-directory: ./frontend
+             run: npm ci 
+           - name: Run Lint
+             working-directory: ./frontend
+             run: npm run lint  
+           - name: build frontend
+             working-directory: ./frontend
+             run: npm run build
+           - name: check build status 
+             if: failure()
+             run: exit 1
+
+    deployment:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v7
+            - uses: BetaHuhn/deploy-to-vercel-action@latest
+              with:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

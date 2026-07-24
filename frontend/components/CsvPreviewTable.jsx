@@ -14,7 +14,7 @@ export default function CsvPreviewTable({ data, onConfirm, onCancel }) {
         <div>
           <h2 className="text-xl font-semibold text-slate-100 flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            CSV Raw Preview ({data.length} records detected)
+            CSV Raw Preview ({data.length} records detect)
           </h2>
           <p className="text-slate-400 text-sm mt-0.5">
             Reviewing raw file columns before starting AI-based mapping.
